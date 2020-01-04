@@ -1,2 +1,12 @@
-<p>login works!</p>
-<a routerLink="/auth/register">Not registered</a>
+<mat-card>
+  <app-auth-form (submitted)="loginUser($event)">
+    <h1>Login</h1>
+    <a routerLink="/auth/register">Not registered</a>
+    <button type="submit">
+      Login
+    </button>
+    <div class="error" *ngIf="error">
+      {{ error }}
+    </div>
+  </app-auth-form>
+</mat-card>
